@@ -3,35 +3,47 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="border-b bg-white relative">
       <div className="max-w-7xl mx-auto flex items-center text-gray-400 justify-between px-20 py-4">
-        
         {/* Logo */}
         <a href="/">
-          <img
-            src="/media/images/logo.svg"
-            alt="Logo"
-            className="w-32"
-          />
+          <img src="/media/images/logo.svg" alt="Logo" className="w-32" />
         </a>
 
         {/* Desktop Links */}
         <div className="flex items-center gap-10 text-gray-600 font-medium">
-          
-          <Link href="/signup" className="hover:text-shadow-blue-600"> Signup</Link>
-
-          <a href="#" className="hover:text-blue-600">
+          <Link
+            href="/signup"
+            className={`hover:text-blue-600 ${
+              pathname === "/signup"
+                ? "text-blue-600 font-medium"
+                : "text-gray-600"
+            }`}
+          >
+            {" "}
+            Signup
+          </Link>
+          <Link href="/about" className={`hover:text-blue-600 ${
+              pathname === "/about"
+                ? "text-blue-600 font-medium"
+                : "text-gray-600"
+            }`}>
             About
-          </a>
+          </Link>
 
-          <a href="#" className="hover:text-blue-600">
+          <Link href="/products" className={`hover:text-blue-600 ${
+              pathname === "/products"
+                ? "text-blue-600 font-medium"
+                : "text-gray-600"
+            }`}>
             Products
-          </a>
+          </Link>
 
           <a href="#" className="hover:text-blue-600">
             Pricing
@@ -51,7 +63,6 @@ export default function Navbar() {
       {/* Dropdown Menu */}
       {open && (
         <div className="absolute right-20 top-20 w-212.5 bg-white shadow-xl border rounded-md z-50">
-          
           {/* Top Section */}
           <div className="grid grid-cols-4 gap-10 p-10 border-b">
             <div className="text-center">
@@ -97,7 +108,6 @@ export default function Navbar() {
 
           {/* Bottom Section */}
           <div className="grid grid-cols-3 gap-10 p-10">
-            
             <div>
               <h3 className="text-2xl font-semibold mb-5">Utilities</h3>
 

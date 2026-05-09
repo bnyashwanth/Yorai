@@ -12,7 +12,7 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-[#fbfbfb] border-t pt-10">
-      <div className="max-w-6xl mx-auto px-6 py-5">
+      <div className="max-w-7xl mx-auto px-6 py-5">
         {/* Changed to a 12-column grid for better proportional control */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
           {/* Left Section - Takes up 4 out of 12 columns */}
