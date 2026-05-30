@@ -1,17 +1,13 @@
-import React from 'react'
-import Hero from '@/components/marketing/products/hero';
-import LeftSection from '@/components/marketing/products/LeftSection';
-import RightSection from '@/components/marketing/products/RightSection';
-import Universe from '@/components/marketing/products/Universe';
+import Hero from "@/components/marketing/pricing/Hero";
+import Brokerage from "@/components/marketing/pricing/Brokerage";
+import OpenAccount from "@/components/marketing/home/OpenAccout";
 
-export default function Products(){
+export default function Pricing() {
     return (
-        <div>
+        <div className="flex flex-col bg-white">
             <Hero />
-            <LeftSection imageURL={''} productName={''} productDesription={''} tryDemo={''} learnMore={''} googlePlay={''} appStore={''} />
-            <RightSection imageURL={''} productName={''} productDesription={''} learnMore={''} />
-            <Universe />
-            
+            <OpenAccount />
+            <Brokerage />
         </div>
-    )
+    );
 }

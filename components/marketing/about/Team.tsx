@@ -19,15 +19,15 @@ const Team: React.FC = () => {
           {/* Left */}
           <div className="flex flex-col items-center text-center">
             <Image
-              src="/media/images/nithinKamath.jpg"
-              alt="Nithin Kamath"
+              src="/media/images/yashwanth.png"
+              alt="Yashwanth"
               width={320}
               height={320}
               className="rounded-full object-cover w-64 h-64 md:w-72 md:h-72"
             />
 
             <h2 className="mt-8 text-2xl font-semibold text-black">
-              Nithin Kamath
+              Yashwanth
             </h2>
 
             <p className="text-gray-500 mt-2">Founder, CEO</p>
@@ -36,7 +36,7 @@ const Team: React.FC = () => {
           {/* Right */}
           <div className="text-gray-700 text-lg leading-9 space-y-6">
             <p>
-              Nithin bootstrapped and founded Zerodha in 2010 to overcome the
+              Yashwanth bootstrapped and founded Zerodha in 2010 to overcome the
               hurdles he faced during his decade long stint as a trader.
             </p>
 

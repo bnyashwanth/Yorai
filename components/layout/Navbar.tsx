@@ -44,10 +44,22 @@ export default function Navbar() {
             }`}>
             Products
           </Link>
-
-          <a href="#" className="hover:text-blue-600">
+             <Link href="/pricing" className={`hover:text-blue-600 ${
+              pathname === "/pricing"
+                ? "text-blue-600 font-medium"
+                : "text-gray-600"
+            }`}>
             Pricing
-          </a>
+          </Link>
+
+           <Link href="/support" className={`hover:text-blue-600 ${
+              pathname === "/support"
+                ? "text-blue-600 font-medium"
+                : "text-gray-600"
+            }`}>
+            Support
+          </Link>
+
 
           <a href="#" className="hover:text-blue-600">
             Support
