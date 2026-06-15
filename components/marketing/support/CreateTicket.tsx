@@ -86,8 +86,7 @@ export default function CreateTicket() {
 					{topicGroups.map((group) => (
 						<article
 							key={group.title}
-							className="rounded-3xl border border-gray-200 bg-[#fcfcfd] p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-						>
+className="border border-[#e6e6e6] bg-white p-6 transition hover:border-[#387ed1]"							>
 							<h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900">
 								<CirclePlus size={20} className="text-[#387ed1]" />
 								{group.title}

@@ -27,8 +27,7 @@ export default function Hero() {
 					<input
 						type="text"
 						placeholder="Eg: How do I open my account, How do I activate F&O..."
-						className="w-full h-12 pl-12 border border-gray-300 bg-white text-sm focus:outline-none focus:border-[#387ed1]"
-					/>
+className="w-full h-12 pl-12 border border-gray-300 bg-white text-sm text-gray-600 placeholder:text-gray-400 focus:outline-none focus:border-[#387ed1]"					/>
 				</div>
 			</div>
 		</section>
