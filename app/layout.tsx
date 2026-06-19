@@ -1,8 +1,5 @@
 import "./globals.css";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -10,12 +7,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-
+      <body className="bg-[#fbfbfb] text-[#424242] antialiased">
+        {/* We removed Navbar and Footer from here! */}
         {children}
-
-        <Footer />
       </body>
     </html>
   );

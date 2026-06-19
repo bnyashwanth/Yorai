@@ -1,10 +1,14 @@
-import React from "react";
+"use client";
+
+import React, { useActionState } from "react";
+import { signupAction } from "@/app/actions/auth";
 
 export default function SignupPage() {
+  // Hook up the Next.js Server Action
+  const [state, formAction, isPending] = useActionState(signupAction, null);
+
   return (
     <div className="min-h-screen bg-white font-sans text-[#424242]">
-      {/* Navbar */}
-
       {/* Hero Section */}
       <section className="pt-16 pb-20 px-4">
         <div className="text-center mb-16">
@@ -27,32 +31,62 @@ export default function SignupPage() {
             />
           </div>
 
-          {/* Signup Form */}
+          {/* NEW: Email/Password Signup Form */}
           <div className="w-full md:w-2/5 max-w-87.5">
             <h2 className="text-[22px] font-medium mb-1">Signup now</h2>
             <p className="text-[13px] text-[#9b9b9b] mb-6">
               Or track your existing application
             </p>
 
-            <div className="flex mb-6">
-              <div className="flex items-center justify-center px-4 border border-r-0 border-gray-300 rounded-l bg-gray-50 text-gray-700 text-sm">
-                <img
-                  src="https://placehold.co/20x15/green/white?text=IN"
-                  alt="Flag"
-                  className="mr-2 h-3"
+            <form action={formAction} className="space-y-4 text-left mb-6">
+              <div>
+                <label className="block text-sm text-[#424242] mb-1">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-sm transition"
+                  placeholder="John Doe"
                 />
-                +91
               </div>
-              <input
-                type="text"
-                placeholder="Enter your mobile number"
-                className="w-full px-4 py-3 border border-gray-300 rounded-r focus:outline-none focus:border-blue-500 text-sm transition"
-              />
-            </div>
 
-            <button className="w-full bg-[#387ed1] text-white font-medium py-2.5 rounded hover:bg-[#2b64a8] transition mb-4 text-[15px]">
-              Get OTP
-            </button>
+              <div>
+                <label className="block text-sm text-[#424242] mb-1">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-sm transition"
+                  placeholder="user@example.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm text-[#424242] mb-1">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-sm transition"
+                  placeholder="••••••••"
+                />
+              </div>
+
+              {/* Show error message if the server action fails */}
+              {state?.error && (
+                <div className="text-red-500 text-sm bg-red-50 p-3 rounded">
+                  {state.error}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={isPending}
+                className="w-full bg-[#387ed1] text-white font-medium py-2.5 rounded hover:bg-[#2b64a8] transition text-[15px] disabled:opacity-70 disabled:cursor-not-allowed mt-2"
+              >
+                {isPending ? "Creating Account..." : "Sign up"}
+              </button>
+            </form>
 
             <p className="text-[11px] text-[#9b9b9b] mb-4 leading-relaxed">
               By proceeding, you agree to the Zerodha{" "}

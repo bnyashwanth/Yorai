@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   // Hardcoded to true to match the screenshot's open state by default
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
   // Zerodha's brand blue
